@@ -1,0 +1,38 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$X67xE1qjB1yb$kOoRGpnCXRdUQBLwRymOuXDfNpNYbEXGvYfesFGlNxw=",
+        "last_login": "2019-07-13T15:55:32.181Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-07-13T15:55:00.189Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$tlM56Bewag7A$tUdf1NuJr7TLXQpUGDuVEMJllk66p+oLYr+2zp0AWwo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "uaenergy",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-07-14T13:17:05.789Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
