@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+{% if result_tables %}
+    {% include "_result_table.html" with caption='Alpha A' input_table=result_tables.0 %}
+    {% include "_result_table.html" with caption='Alpha B' input_table=result_tables.1 %}
+    {% include "_result_table.html" with caption='System Generated' input_table=result_tables.2 %}
+{% endif %}
+{% endblock %}

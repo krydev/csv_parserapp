@@ -15,7 +15,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = True
 
 ALLOWED_HOSTS = []
-AUTH_USER_MODEL = 'auth.User'
 
 # Application definition
 
@@ -110,3 +109,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Application constants
+AUTH_USER_MODEL = 'auth.User'
+FILE_UPLOAD_TYPE = 'csv'
+MIME_UPLOAD_TYPE = 'text/plain'
+MAX_UPLOAD_SIZE = 1 #megabytes
+COLS_NUM = 16

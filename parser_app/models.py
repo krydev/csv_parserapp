@@ -1,8 +1,8 @@
-
 from django.contrib.auth import get_user_model
 from django.db import models
 
-VALUE_COLS_NUM = 16
+from csv_parser.settings import COLS_NUM
+
 User = get_user_model()
 
 
@@ -14,16 +14,14 @@ class Variable(models.Model):
     class Meta:
         get_latest_by = 'created_at'
         indexes = [
-            models.Index(fields=['user']),
-            models.Index(fields=['name']),
-            models.Index(fields=['-created_at']),
+            models.Index(fields=['user', 'created_at']),
         ]
 
     def __str__(self):
         return f'Variable {self.name}'
 
 
-for i in range(1, VALUE_COLS_NUM+1):
+for i in range(1, COLS_NUM+1):
     Variable.add_to_class(
             f'D{i}',
             models.CharField(max_length=8, blank=True)
