@@ -1,8 +1,22 @@
 {% extends "base.html" %}
+{% block header %}
+    <h1> Welcome, <b>{{ user.get_username }}</b>!</h1>
+    {{ block.super }}
+{% endblock %}
 {% block content %}
-    <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Upload">
-    </form>
+<div class="displayContainer">
+    <div class="content">
+        {% if form.file.errors %}
+            {{ form.file.errors }}
+        {% endif %}
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p class="cell">
+                {{ form.file.label }} <br/>
+                {{ form.file }}
+            </p>
+            <p class="cell"><input type="submit" value="Upload"></p>
+        </form>
+    </div>
+</div>
 {% endblock %}

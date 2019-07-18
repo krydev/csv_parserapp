@@ -111,6 +111,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Application constants
+LOGIN_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'auth.User'
 FILE_UPLOAD_TYPE = 'csv'
 MIME_UPLOAD_TYPE = 'text/plain'

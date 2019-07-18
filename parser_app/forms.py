@@ -9,7 +9,7 @@ MB_FACTOR = 1 << 20
 
 
 class UploadFileForm(Form):
-    file = FileField(label=mark_safe('Upload a csv file to parse.<br />'
+    file = FileField(label=mark_safe('Upload a csv file to parse. '
                            f'Max size is {MAX_UPLOAD_SIZE}Mb'),
                      widget=FileInput(attrs={'accept': '.csv'}))
 

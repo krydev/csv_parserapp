@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +10,21 @@
         Parser App
         {% endif %}
     </title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
+    <div class="header">
+    {% block header %}
+        {% if user.is_authenticated %}
+        <div class="navigation">
+            <span><a href="{% url 'parser_app:main' %}">Main</a></span>
+            <span><a href="{% url 'parser_app:results' %}">Result Tables</a></span>
+            <span><a href="{% url 'parser_app:logout' %}">Logout</a></span>
+        </div>
+        {% endif %}
+        <hr>
+    {% endblock %}
+    </div>
     {% block content %}
     {% endblock %}
 </body>

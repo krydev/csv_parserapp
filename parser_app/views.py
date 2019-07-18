@@ -92,6 +92,7 @@ class UploaderView(LoginRequiredMixin, FormView):
 class TableDisplayView(LoginRequiredMixin, TemplateView):
     template_name = 'results.html'
     login_url = reverse_lazy('parser_app:login')
+    extra_context = {'title': 'Results'}
 
     def _retrieve_latest_data(self):
         latest_date = Variable.objects.filter(user=self.request.user) \
