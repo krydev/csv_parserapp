@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = "t+v$d8_#j!(mscg#ms#%e4%v+f7iowzjufs7=hn++5%t44e@_u"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -115,5 +115,5 @@ LOGIN_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'auth.User'
 FILE_UPLOAD_TYPE = 'csv'
 MIME_UPLOAD_TYPE = 'text/plain'
-MAX_UPLOAD_SIZE = 1 #megabytes
+MAX_UPLOAD_SIZE = 5 #megabytes
 COLS_NUM = 16

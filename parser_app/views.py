@@ -95,11 +95,13 @@ class TableDisplayView(LoginRequiredMixin, TemplateView):
     extra_context = {'title': 'Results'}
 
     def _retrieve_latest_data(self):
-        latest_date = Variable.objects.filter(user=self.request.user) \
-                                      .latest('created_at').created_at
-        return Variable.objects.filter(
-            Q(user=self.request.user) & Q(created_at=latest_date)
-        ).values()
+        user_records = Variable.objects.filter(user=self.request.user)
+        if user_records:
+            latest_date = user_records.latest('created_at').created_at
+            return Variable.objects.filter(
+                Q(user=self.request.user) & Q(created_at=latest_date)
+            ).values()
+        return None
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

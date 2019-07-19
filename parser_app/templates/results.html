@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="displayContainer">
+    {% if result_tables %}
     <div class="content">
-        {% if result_tables %}
-            <div class="table_container">
-                {% include "_result_table.html" with caption='Alpha A' input_table=result_tables.0 %}
-            </div>
-            <div class="table_container">
-                {% include "_result_table.html" with caption='Alpha B' input_table=result_tables.1 %}
-            </div>
-            <div class="table_container">
-                {% include "_result_table.html" with caption='System Generated' input_table=result_tables.2 %}
-            </div>
-        {% else %}
-            <h1>
-                You haven't uploaded a file yet. Please, proceed to the
-                <a href="{% url 'parser_app:main' %}">Main Page</a>.
-            </h1>
-        {% endif %}
+        <div class="table_container">
+            {% include "_result_table.html" with caption='Alpha A' input_table=result_tables.0 %}
+        </div>
+        <div class="table_container">
+            {% include "_result_table.html" with caption='Alpha B' input_table=result_tables.1 %}
+        </div>
+        <div class="table_container">
+            {% include "_result_table.html" with caption='System Generated' input_table=result_tables.2 %}
+        </div>
     </div>
+    {% else %}
+        <h1>
+            You haven't uploaded a file yet. Please, proceed to the
+            <a href="{% url 'parser_app:main' %}">Main Page</a>.
+        </h1>
+    {% endif %}
 </div>
 {% endblock %}
